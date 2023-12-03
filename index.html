@@ -3,127 +3,55 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Slider demo</title>
+    <title>Калькулятор вкладов</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <style>
-      body {
-        padding-top: 5%;
-      }
-      .swiper {
-        width: 80%;
-        height: 600px;
-      }
-      .swiper-slide img {
-        min-width: 100%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      @media (max-width: 600px) {
-        .swiper {
-          max-height: 200px;
-        }
-        .swiper-button-prev {
-          visibility: hidden;
-        }
-        .swiper-button-next {
-          visibility: hidden;
-        }
-      }
-      @media (max-width: 1200px) {
-        .swiper {
-          max-height: 400px;
-        }
-      }
-    </style>
   </head>
   <body>
-    <!-- Slider main container -->
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img
-            align="middle"
-            src="https://vsedrugoeshop.ru/upload/ammina.optimizer/png-webp/q80/upload/iblock/e02/e027bf729893b633289c514dc4526fe3/fbd6fffebd2ace9ab028a02f76488be1-_1_-_1_.webp"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            align="middle"
-            src="https://img.goodfon.ru/original/2123x1500/7/78/zhivopis-korzuhin-voskresnyy.jpg"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            align="middle"
-            src="https://w.forfun.com/fetch/9e/9e8d6a4eb04c486fccee1a9f6abc4909.jpeg"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            align="middle"
-            src="https://cdn.culture.ru/images/60bd1957-6396-5eb8-b21a-3ff794e7b2a1"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            align="middle"
-            src="https://enotnavolge.ru/wp-content/uploads/d/b/4/db4982dc604881177be1c0e9d3d9c12b.jpeg"
-            alt=""
-          />
-        </div>
-        <div class="swiper-slide">
-          <img
-            align="middle"
-            src="https://crosti.ru/patterns/00/1c/10/84_picture_440c25be.jpg"
-            alt=""
-          />
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Калькулятор вкладов</h1>
         </div>
       </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <select class="form-select mb-3" id="deposit-type">
+              <option value="0">Вид вклада</option>
+              <option value="1">Пополняемый</option>
+              <option value="2">Срочный</option>
+            </select>
+            <select class="form-select mb-3" id="deposit-time"></select>
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Сумма, руб"
+              id="deposit-amount"
+            />
+            <button type="button" class="btn btn-primary mb-3" id="run-count">
+              Рассчитать
+            </button>
+          </div>
+          <div class="col-md-6 bg-dark-subtle pt-2" id="results"></div>
+        </div>
+      </form>
     </div>
 
-    <script>
-      const swiper = new Swiper(".swiper", {
-        // Optional parameters
-        direction: "horizontal",
-        loop: true,
-        slidesPerView: 1,
-
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-      });
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
